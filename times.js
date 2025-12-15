@@ -230,7 +230,7 @@ Rui Hachimura`
 },
 
 {
-ame: "Los Angeles Clippers",
+name: "Los Angeles Clippers",
 slug: "los-angeles-clippers",
 text: `Los Angeles Clippers
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Los Angeles Clippers
