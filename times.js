@@ -2,7 +2,7 @@ const teams = [
 
 {
 name: "Atlanta Hawks",
-conf: "east",
+slug: "atlanta-hawks",
 text: `Atlanta Hawks
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Atlanta Hawks
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -21,7 +21,7 @@ Zaccharie Risacher`
 
 {
 name: "Boston Celtics",
-conf: "east",
+slug: "boston-celtics",
 text: `Boston Celtics
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Boston Celtics
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -41,7 +41,7 @@ Josh Minott`
 
 {
 name: "Brooklyn Nets",
-conf: "east",
+slug: "brooklyn-nets",
 text: `Brooklyn Nets
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Brooklyn Nets
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -61,7 +61,7 @@ Noah Clowney`
 
 {
 name: "Charlotte Hornets",
-conf: "east",
+slug: "charlotte-hornets",
 text: `Charlotte Hornets
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Charlotte Hornets
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -78,7 +78,7 @@ Grant Williams`
 
 {
 name: "Chicago Bulls",
-conf: "east",
+slug: "chicago-bulls",
 text: `Chicago Bulls
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Chicago Bulls
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -95,7 +95,7 @@ Ayo Dosunmu`
 
 {
 name: "Cleveland Cavaliers",
-conf: "east",
+slug: "cleveland-cavaliers",
 text: `Cleveland Cavaliers
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Cleveland Cavaliers
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -112,7 +112,7 @@ Caris LeVert`
 
 {
 name: "Dallas Mavericks",
-conf: "west",
+slug: "dallas-mavericks",
 text: `Dallas Mavericks
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Dallas Mavericks
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -129,7 +129,7 @@ Tim Hardaway Jr.`
 
 {
 name: "Denver Nuggets",
-conf: "west",
+slug: "denver-nuggets",
 text: `Denver Nuggets
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Denver Nuggets
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -146,7 +146,7 @@ Kentavious Caldwell-Pope`
 
 {
 name: "Detroit Pistons",
-conf: "east",
+slug: "detroit-pistons",
 text: `Detroit Pistons
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Detroit Pistons
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -163,7 +163,7 @@ Isaiah Stewart`
 
 {
 name: "Golden State Warriors",
-conf: "west",
+slug: "golden-state-warriors",
 text: `Golden State Warriors
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Golden State Warriors
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -180,7 +180,7 @@ Andrew Wiggins`
 
 {
 name: "Houston Rockets",
-conf: "west",
+slug: "houston-rockets",
 text: `Houston Rockets
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Houston Rockets
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -197,7 +197,7 @@ Amen Thompson`
 
 {
 name: "Indiana Pacers",
-conf: "east",
+slug: "indiana-pacers",
 text: `Indiana Pacers
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Indiana Pacers
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -214,7 +214,7 @@ Buddy Hield`
 
 {
 name: "Los Angeles Lakers",
-conf: "west",
+slug: "los-angeles-lakers",
 text: `Los Angeles Lakers
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Los Angeles Lakers
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -230,8 +230,8 @@ Rui Hachimura`
 },
 
 {
-name: "Los Angeles Clippers",
-conf: "west",
+ame: "Los Angeles Clippers",
+slug: "los-angeles-clippers",
 text: `Los Angeles Clippers
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Los Angeles Clippers
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -248,7 +248,7 @@ Terance Mann`
 
 {
 name: "Miami Heat",
-conf: "east",
+slug: "miami-heat",
 text: `Miami Heat
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Miami Heat
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -265,7 +265,7 @@ Jaime Jaquez Jr.`
 
 {
 name: "Milwaukee Bucks",
-conf: "east",
+slug: "milwaukee-bucks",
 text: `Milwaukee Bucks
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Milwaukee Bucks
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -282,7 +282,7 @@ Bobby Portis`
 
 {
 name: "Minnesota Timberwolves",
-conf: "west",
+slug: "minnesota-timberwolves",
 text: `Minnesota Timberwolves
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Minnesota Timberwolves
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -299,7 +299,7 @@ Jaden McDaniels`
 
 {
 name: "New York Knicks",
-conf: "east",
+slug: "new-york-knicks",
 text: `New York Knicks
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do New York Knicks
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -316,7 +316,7 @@ Mitchell Robinson`
 
 {
 name: "Oklahoma City Thunder",
-conf: "west",
+slug: "oklahoma-city-thunder",
 text: `Oklahoma City Thunder
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Oklahoma City Thunder
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -333,7 +333,7 @@ Luguentz Dort`
 
 {
 name: "Phoenix Suns",
-conf: "west",
+slug: "phoenix-suns",
 text: `Phoenix Suns
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Phoenix Suns
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -350,7 +350,7 @@ Grayson Allen`
 
 {
 name: "San Antonio Spurs",
-conf: "west",
+slug: "san-antonio-spurs",
 text: `San Antonio Spurs
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do San Antonio Spurs
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -367,7 +367,7 @@ Tre Jones`
 
 {
 name: "Toronto Raptors",
-conf: "east",
+slug: "toronto-raptors",
 text: `Toronto Raptors
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Toronto Raptors
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -384,7 +384,7 @@ Gary Trent Jr.`
 
 {
 name: "Utah Jazz",
-conf: "west",
+slug: "utah-jazz",
 text: `Utah Jazz
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Utah Jazz
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
@@ -401,7 +401,7 @@ Keyonte George`
 
 {
 name: "Washington Wizards",
-conf: "east",
+slug: "washington-wizards",
 text: `Washington Wizards
 Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Washington Wizards
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
