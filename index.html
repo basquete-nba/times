@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NBA – Copiar Texto por Time</title>
 
 <style>
@@ -12,33 +13,61 @@ body{
   color:#ffffff;
   font-family:Arial, Helvetica, sans-serif;
 }
+
 h1{
   text-align:center;
   margin-bottom:30px;
+  font-size:22px;
 }
+
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
   gap:16px;
 }
+
+/* CARD PADRÃO */
 .card{
-  padding:18px;
-  border-radius:14px;
+  background:#1f6feb; /* COR ÚNICA PARA TODOS */
+  padding:16px;
+  border-radius:16px;
   cursor:pointer;
   font-weight:bold;
   text-align:center;
-  transition:0.2s;
+  transition:transform .2s, box-shadow .2s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
 }
+
 .card:hover{
-  transform:scale(1.04);
-  opacity:0.9;
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
-.east{background:#1f6feb;}
-.west{background:#c1121f;}
+
+/* LOGO */
+.card img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+/* TEXTO AUXILIAR */
 .info{
-  margin-top:8px;
   font-size:12px;
   opacity:0.85;
+}
+
+/* ANIMAÇÃO DE COPIADO */
+.copied{
+  background:#16a34a !important;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  h1{font-size:18px;}
+  .card img{width:42px;height:42px;}
 }
 </style>
 </head>
@@ -53,14 +82,31 @@ h1{
 <script>
 const container = document.getElementById("teams");
 
+/* ORDENAR ALFABETICAMENTE */
+teams.sort((a,b)=>a.name.localeCompare(b.name));
+
 teams.forEach(team=>{
   const div = document.createElement("div");
-  div.className = `card ${team.conf}`;
-  div.innerHTML = `${team.name}<div class="info">Clique para copiar</div>`;
-  div.onclick = ()=> {
+  div.className = "card";
+
+  div.innerHTML = `
+    <img src="https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png" alt="${team.name}">
+    ${team.name}
+    <div class="info">Clique para copiar</div>
+  `;
+
+  div.onclick = ()=>{
     navigator.clipboard.writeText(team.text);
-    alert("Texto copiado com sucesso!");
+
+    div.classList.add("copied");
+    div.querySelector(".info").innerText = "Texto copiado!";
+
+    setTimeout(()=>{
+      div.classList.remove("copied");
+      div.querySelector(".info").innerText = "Clique para copiar";
+    },1200);
   };
+
   container.appendChild(div);
 });
 </script>
