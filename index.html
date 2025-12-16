@@ -116,16 +116,24 @@ teams.forEach(team=>{
   `;
 
   div.onclick = ()=>{
-    navigator.clipboard.writeText(team.text);
+  const texto = team.text;
 
-    div.classList.add("copied");
-    div.querySelector(".info").innerText = "Texto copiado!";
+  // Copia o texto
+  navigator.clipboard.writeText(texto);
 
-    setTimeout(()=>{
-      div.classList.remove("copied");
-      div.querySelector(".info").innerText = "Clique para copiar";
-    },1200);
-  };
+  // Feedback visual
+  div.classList.add("copied");
+  div.querySelector(".info").innerText = "Copiado e pesquisando...";
+
+  // Abre o Google com o texto já na busca
+  const query = encodeURIComponent(texto);
+  window.open(`https://www.google.com/search?q=${query}`, "_blank");
+
+  setTimeout(()=>{
+    div.classList.remove("copied");
+    div.querySelector(".info").innerText = "Clique para copiar";
+  },1200);
+};
 
   container.appendChild(div);
 });
