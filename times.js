@@ -71,9 +71,11 @@ O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais an
 A fonte de pesquisa precisa ser o Google.
 LaMelo Ball
 Brandon Miller
+Moussa Diabaté
 Miles Bridges
-Mark Williams
-Grant Williams`
+Kon Knueppel
+Collin Sexton
+Tre Mann`
 },
 
 {
@@ -86,11 +88,13 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Zach LaVine
+Josh Giddey
 Nikola Vučević
 Coby White
-Patrick Williams
-Ayo Dosunmu`
+Matas Buzelis
+Tre Jones
+Ayo Dosunmu
+Zach Collins`
 },
 
 {
@@ -107,7 +111,11 @@ Donovan Mitchell
 Darius Garland
 Evan Mobley
 Jarrett Allen
-Caris LeVert`
+De'Andre Hunter
+Lonzo Ball
+Max Strus
+Dean Wade
+Sam Merrill`
 },
 
 {
@@ -120,11 +128,14 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Luka Dončić
 Kyrie Irving
-Dereck Lively II
-PJ Washington
-Tim Hardaway Jr.`
+P. J. Washington
+Cooper Flagg
+Anthony Davis
+Daniel Gafford
+Klay Thompson
+Naji Marshall
+Dereck Lively II`
 },
 
 {
@@ -137,11 +148,14 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Nikola Jokić
+Nikola Jokic
 Jamal Murray
-Michael Porter Jr.
+Peyton Watson
+Cameron Johnson
 Aaron Gordon
-Kentavious Caldwell-Pope`
+Christian Braun
+Tim Hardaway Jr.
+Jonas Valančiūnas`
 },
 
 {
@@ -154,11 +168,12 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Cade Cunningham
-Jaden Ivey
-Ausar Thompson
 Jalen Duren
-Isaiah Stewart`
+Cade Cunningham
+Tobias Harris
+Ausar Thompson
+Duncan Robinson
+Jaden Ivey`
 },
 
 {
@@ -172,10 +187,12 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Stephen Curry
-Klay Thompson
+Jimmy Butler
 Draymond Green
 Jonathan Kuminga
-Andrew Wiggins`
+Brandin Podziemski
+Al Horford
+Buddy Hield`
 },
 
 {
@@ -188,11 +205,13 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
+Kevin Durant
 Alperen Şengün
-Jalen Green
+Amen Thompson
+Steven Adams
 Fred VanVleet
 Jabari Smith Jr.
-Amen Thompson`
+Aaron Holiday`
 },
 
 {
@@ -205,11 +224,14 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Tyrese Haliburton
 Pascal Siakam
-Myles Turner
+Tyrese Haliburton
 Bennedict Mathurin
-Buddy Hield`
+Andrew Nembhard
+Isaiah Jackson
+Aaron Nesmith
+Jarace Walker
+T. J. McConnell`
 },
 
 {
@@ -223,10 +245,14 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 LeBron James
-Anthony Davis
+Luka Dončić
 Austin Reaves
-D'Angelo Russell
-Rui Hachimura`
+Deandre Ayton
+Rui Hachimura
+Gabe Vincent
+Jake LaRavia
+Marcus Smart
+Jaxson Hayes`
 },
 
 {
@@ -239,11 +265,34 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Kawhi Leonard
-Paul George
 James Harden
+Kawhi Leonard
 Ivica Zubac
-Terance Mann`
+John Collins
+Derrick Jones Jr.
+Bradley Beal
+Bogdan Bogdanović
+Brook Lopez`
+},
+
+{
+name: "Memphis Grizzlies",
+slug: "memphis-grizzlies",
+text: `Memphis Grizzlies
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Memphis Grizzlies
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+Ja Morant
+Jaren Jackson Jr.
+Vince Williams Jr.
+Zach Edey
+Santi Aldama
+Cam Spencer
+Jaylen Wells
+Cedric Coward`
 },
 
 {
@@ -256,10 +305,12 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Jimmy Butler
-Bam Adebayo
 Tyler Herro
-Terry Rozier
+Norman Powell
+Davion Mitchell
+Kel'el Ware
+Bam Adebayo
+Andrew Wiggins
 Jaime Jaquez Jr.`
 },
 
@@ -274,10 +325,16 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Giannis Antetokounmpo
-Damian Lillard
-Khris Middleton
-Brook Lopez
-Bobby Portis`
+Kevin Porter Jr.
+Myles Turner
+Ryan Rollins
+Bobby Portis
+Cole Anthony
+Kyle Kuzma
+A.J. Green
+Taurean Prince
+Gary Trent Jr.
+Jericho Sims`
 },
 
 {
@@ -291,12 +348,33 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Anthony Edwards
-Karl-Anthony Towns
+Julius Randle
+Donte DiVincenzo
 Rudy Gobert
-Mike Conley
-Jaden McDaniels`
+Jaden McDaniels
+Naz Reid
+Mike Conley Jr.`
 },
 
+{
+name: "New Orleans Pelicans",
+slug: "new-orleans-pelicans",
+text: `New Orleans Pelicans
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do New Orleans Pelicans
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+Trey Murphy III
+Zion Williamson
+Derik Queen
+Saddiq Bey
+Jeremiah Fears
+Dejounte Murray
+Jose Alvarado`
+},
+  
 {
 name: "New York Knicks",
 slug: "new-york-knicks",
@@ -308,10 +386,13 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Jalen Brunson
-Julius Randle
-RJ Barrett
 Josh Hart
-Mitchell Robinson`
+Mikal Bridges
+OG Anunoby
+Karl-Anthony Towns
+Jordan Clarkson
+Mitchell Robinson
+Miles McBride`
 },
 
 {
@@ -325,12 +406,55 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Shai Gilgeous-Alexander
-Josh Giddey
 Chet Holmgren
 Jalen Williams
-Luguentz Dort`
+Isaiah Hartenstein
+Ajay Mitchell
+Aaron Wiggins
+Luguentz Dort
+Alex Caruso
+Isaiah Joe`
 },
 
+{
+name: "Orlando Magic",
+slug: "orlando-magic",
+text: `Orlando Magic
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Orlando Magic
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+Paolo Banchero
+Franz Wagner
+Desmond Bane
+Jalen Suggs
+Wendell Carter Jr.
+Anthony Black
+Tristan da Silva
+Goga Bitadze`
+},
+
+{
+name: "Philadelphia 76ers",
+slug: "philadelphia-76ers",
+text: `Philadelphia 76ers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Philadelphia 76ers
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+Tyrese Maxey
+Joel Embiid
+Quentin Grimes
+Kelly Oubre Jr.
+V. J. Edgecombe
+Paul George
+Trendon Watford`
+},
+  
 {
 name: "Phoenix Suns",
 slug: "phoenix-suns",
@@ -341,13 +465,53 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Kevin Durant
 Devin Booker
-Bradley Beal
-Jusuf Nurkić
+Dillon Brooks
+Collin Gillespie
+Jalen Green
+Royce O'Neale
+Mark Williams
 Grayson Allen`
 },
 
+{
+name: "Portland Trail Blazers",
+slug: "portland-trail-blazers",
+text: `Portland Trail Blazers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Portland Trail Blazers
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+Deni Avdija
+Shaedon Sharpe
+Donovan Clingan
+Jerami Grant
+Damian Lillard
+Toumani Camara
+Scoot Henderson`
+},
+
+{
+name: "Sacramento Kings",
+slug: "sacramento-kings",
+text: `Sacramento Kings
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Sacramento Kings
+Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
+Gostaria em forma de tabela, separada por jogador.
+Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
+O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
+A fonte de pesquisa precisa ser o Google.
+DeMar DeRozan
+Zach LaVine
+Domantas Sabonis
+Keegan Murray
+Malik Monk
+Russell Westbrook
+Dennis Schröder`
+},
+  
 {
 name: "San Antonio Spurs",
 slug: "san-antonio-spurs",
@@ -359,10 +523,13 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Victor Wembanyama
-Devin Vassell
+Stephon Castle
+De'Aaron Fox
+Harrison Barnes
 Keldon Johnson
-Jeremy Sochan
-Tre Jones`
+Devin Vassell
+Dylan Harper
+Jeremy Sochan`
 },
 
 {
@@ -377,9 +544,11 @@ O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais an
 A fonte de pesquisa precisa ser o Google.
 Scottie Barnes
 RJ Barrett
+Brandon Ingram
 Immanuel Quickley
-Jakob Poeltl
-Gary Trent Jr.`
+Ja'Kobe Walter
+Ochai Agbaji
+Gradey Dick`
 },
 
 {
@@ -393,10 +562,13 @@ Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (ze
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Lauri Markkanen
-Jordan Clarkson
-Collin Sexton
+Jusuf Nurkić
+Keyonte George
 Walker Kessler
-Keyonte George`
+Kyle Filipowski
+Isaiah Collier
+Ace Bailey
+Georges Niang`
 },
 
 {
@@ -409,11 +581,13 @@ Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
-Kyle Kuzma
-Jordan Poole
-Tyus Jones
-Daniel Gafford
-Corey Kispert`
+Alex Sarr
+C. J. McCollum
+Kyshawn George
+Justin Champagnie
+Khris Middleton
+Corey Kispert
+Bilal Coulibaly`
 },
 
 
