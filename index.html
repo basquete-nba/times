@@ -8,81 +8,93 @@
 <style>
 body{
   margin:0;
-  padding:20px;
-  background:#0b0c10;
-  color:#ffffff;
+  padding:16px;
+  background:#f3f4f6;
   font-family:Arial, Helvetica, sans-serif;
+  color:#111;
 }
 
 h1{
   text-align:center;
-  margin-bottom:30px;
-  font-size:22px;
+  margin-bottom:20px;
+  font-size:20px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:16px;
-}
-
-/* CARD PADRÃO */
-.card{
-  background:#1f6feb; /* COR ÚNICA PARA TODOS */
-  padding:16px;
-  border-radius:16px;
-  cursor:pointer;
-  font-weight:bold;
-  text-align:center;
-  transition:transform .2s, box-shadow .2s;
+/* LISTA */
+.list{
   display:flex;
   flex-direction:column;
+  gap:12px;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  border-radius:14px;
+  padding:14px 16px;
+  display:flex;
   align-items:center;
-  gap:10px;
+  gap:14px;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  transition:transform .15s, box-shadow .15s;
+  position:relative;
+  overflow:hidden;
+}
+
+/* BARRA AZUL */
+.card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:6px;
+  height:100%;
+  background:#2563eb;
 }
 
 .card:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  transform:scale(1.02);
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 /* LOGO */
 .card img{
-  width:48px;
-  height:48px;
+  width:42px;
+  height:42px;
   object-fit:contain;
 }
 
-/* TEXTO AUXILIAR */
-.info{
-  font-size:12px;
-  opacity:0.85;
+/* TEXTO */
+.card span{
+  font-size:15px;
+  font-weight:600;
 }
 
-/* ANIMAÇÃO DE COPIADO */
-.copied{
-  background:#16a34a !important;
+/* COPIADO */
+.card.copied::before{
+  background:#16a34a;
 }
 
 /* MOBILE */
 @media(max-width:480px){
   h1{font-size:18px;}
-  .card img{width:42px;height:42px;}
+  .card span{font-size:14px;}
 }
 </style>
 </head>
 
 <body>
 
-<h1>NBA – Clique no Time para Copiar o Texto</h1>
+<h1>NBA – Clique no Time para Copiar</h1>
 
-<div class="grid" id="teams"></div>
+<div class="list" id="teams"></div>
 
 <script src="times.js"></script>
 <script>
 const container = document.getElementById("teams");
 
-/* ORDENAR ALFABETICAMENTE */
+/* ORDEM ALFABÉTICA */
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
@@ -91,20 +103,17 @@ teams.forEach(team=>{
 
   div.innerHTML = `
     <img src="https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png" alt="${team.name}">
-    ${team.name}
-    <div class="info">Clique para copiar</div>
+    <span>${team.name}</span>
   `;
 
   div.onclick = ()=>{
     navigator.clipboard.writeText(team.text);
 
     div.classList.add("copied");
-    div.querySelector(".info").innerText = "Texto copiado!";
 
     setTimeout(()=>{
       div.classList.remove("copied");
-      div.querySelector(".info").innerText = "Clique para copiar";
-    },1200);
+    },1000);
   };
 
   container.appendChild(div);
