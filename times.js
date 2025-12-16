@@ -64,7 +64,7 @@ Noah Clowney`
 name: "Charlotte Hornets",
 slug: "charlotte-hornets",
 text: `Charlotte Hornets
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Charlotte Hornets
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -83,7 +83,7 @@ Tre Mann`
 name: "Chicago Bulls",
 slug: "chicago-bulls",
 text: `Chicago Bulls
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Chicago Bulls
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -102,7 +102,7 @@ Zach Collins`
 name: "Cleveland Cavaliers",
 slug: "cleveland-cavaliers",
 text: `Cleveland Cavaliers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Cleveland Cavaliers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -123,7 +123,7 @@ Sam Merrill`
 name: "Dallas Mavericks",
 slug: "dallas-mavericks",
 text: `Dallas Mavericks
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Dallas Mavericks
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -143,7 +143,7 @@ Dereck Lively II`
 name: "Denver Nuggets",
 slug: "denver-nuggets",
 text: `Denver Nuggets
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Denver Nuggets
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -163,7 +163,7 @@ Jonas Valančiūnas`
 name: "Detroit Pistons",
 slug: "detroit-pistons",
 text: `Detroit Pistons
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Detroit Pistons
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -181,7 +181,7 @@ Jaden Ivey`
 name: "Golden State Warriors",
 slug: "golden-state-warriors",
 text: `Golden State Warriors
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Golden State Warriors
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -200,7 +200,7 @@ Buddy Hield`
 name: "Houston Rockets",
 slug: "houston-rockets",
 text: `Houston Rockets
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Houston Rockets
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -219,7 +219,7 @@ Aaron Holiday`
 name: "Indiana Pacers",
 slug: "indiana-pacers",
 text: `Indiana Pacers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Indiana Pacers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -239,7 +239,7 @@ T. J. McConnell`
 name: "Los Angeles Lakers",
 slug: "los-angeles-lakers",
 text: `Los Angeles Lakers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Los Angeles Lakers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -260,7 +260,7 @@ Jaxson Hayes`
 name: "Los Angeles Clippers",
 slug: "los-angeles-clippers",
 text: `Los Angeles Clippers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Los Angeles Clippers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -280,7 +280,7 @@ Brook Lopez`
 name: "Memphis Grizzlies",
 slug: "memphis-grizzlies",
 text: `Memphis Grizzlies
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Memphis Grizzlies
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -300,7 +300,7 @@ Cedric Coward`
 name: "Miami Heat",
 slug: "miami-heat",
 text: `Miami Heat
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Miami Heat
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -319,7 +319,7 @@ Jaime Jaquez Jr.`
 name: "Milwaukee Bucks",
 slug: "milwaukee-bucks",
 text: `Milwaukee Bucks
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Milwaukee Bucks
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -342,7 +342,7 @@ Jericho Sims`
 name: "Minnesota Timberwolves",
 slug: "minnesota-timberwolves",
 text: `Minnesota Timberwolves
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Minnesota Timberwolves
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -361,7 +361,7 @@ Mike Conley Jr.`
 name: "New Orleans Pelicans",
 slug: "new-orleans-pelicans",
 text: `New Orleans Pelicans
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do New Orleans Pelicans
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -380,7 +380,7 @@ Jose Alvarado`
 name: "New York Knicks",
 slug: "new-york-knicks",
 text: `New York Knicks
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do New York Knicks
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -400,7 +400,7 @@ Miles McBride`
 name: "Oklahoma City Thunder",
 slug: "oklahoma-city-thunder",
 text: `Oklahoma City Thunder
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Oklahoma City Thunder
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -421,7 +421,7 @@ Isaiah Joe`
 name: "Orlando Magic",
 slug: "orlando-magic",
 text: `Orlando Magic
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Orlando Magic
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -441,7 +441,7 @@ Goga Bitadze`
 name: "Philadelphia 76ers",
 slug: "philadelphia-76ers",
 text: `Philadelphia 76ers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Philadelphia 76ers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -460,7 +460,7 @@ Trendon Watford`
 name: "Phoenix Suns",
 slug: "phoenix-suns",
 text: `Phoenix Suns
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Phoenix Suns
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -479,7 +479,7 @@ Grayson Allen`
 name: "Portland Trail Blazers",
 slug: "portland-trail-blazers",
 text: `Portland Trail Blazers
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Portland Trail Blazers
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -498,7 +498,7 @@ Scoot Henderson`
 name: "Sacramento Kings",
 slug: "sacramento-kings",
 text: `Sacramento Kings
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Sacramento Kings
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -517,7 +517,7 @@ Dennis Schröder`
 name: "San Antonio Spurs",
 slug: "san-antonio-spurs",
 text: `San Antonio Spurs
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do San Antonio Spurs
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -537,7 +537,7 @@ Jeremy Sochan`
 name: "Toronto Raptors",
 slug: "toronto-raptors",
 text: `Toronto Raptors
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Toronto Raptors
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -556,7 +556,7 @@ Gradey Dick`
 name: "Utah Jazz",
 slug: "utah-jazz",
 text: `Utah Jazz
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Utah Jazz
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -576,7 +576,7 @@ Georges Niang`
 name: "Washington Wizards",
 slug: "washington-wizards",
 text: `Washington Wizards
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Washington Wizards
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
