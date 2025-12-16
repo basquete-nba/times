@@ -29,7 +29,7 @@ h1{
   margin:0 auto;
 }
 
-/* CARD CLEAN */
+/* CARD */
 .card{
   background:#ffffff;
   border-radius:14px;
@@ -90,47 +90,18 @@ h1{
 <script>
 const container = document.getElementById("teams");
 
-/* CORREÇÃO DOS LOGOS PROBLEMÁTICOS */
+/* MAPA DE LOGOS PROBLEMÁTICOS */
 const logoMap = {
-  "denver-nuggets": "nba-denver-nuggets-logo-1.png",
+  "denver-nuggets": "nba-denver-nuggets-logo.png",
   "los-angeles-clippers": "nba-la-clippers-logo.png"
 };
 
-/* ORDENAR TIMES */
+/* ORDENAR */
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
   const div = document.createElement("div");
   div.className = "card";
 
-  const logo = logoMap[team.slug]
-    ? `https://loodibee.com/wp-content/uploads/${logoMap[team.slug]}`
-    : `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
-
-  div.innerHTML = `
-    <img src="${logo}" alt="${team.name}">
-    <div>
-      <span>${team.name}</span>
-      <div class="info">Clique para copiar</div>
-    </div>
-  `;
-
-  div.onclick = ()=>{
-    navigator.clipboard.writeText(team.text);
-
-    div.classList.add("copied");
-    div.querySelector(".info").innerText = "Texto copiado!";
-
-    setTimeout(()=>{
-      div.classList.remove("copied");
-      div.querySelector(".info").innerText = "Clique para copiar";
-    },1200);
-  };
-
-  container.appendChild(div);
-});
-</script>
-
-</body>
-</html>
+  const
 
