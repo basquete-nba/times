@@ -8,26 +8,28 @@
 <style>
 body{
   margin:0;
-  padding:16px;
+  padding:20px;
   background:#f3f4f6;
+  color:#111827;
   font-family:Arial, Helvetica, sans-serif;
-  color:#111;
 }
 
 h1{
   text-align:center;
-  margin-bottom:20px;
-  font-size:20px;
+  margin-bottom:24px;
+  font-size:22px;
 }
 
-/* LISTA */
-.list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  max-width:520px;
+  margin:0 auto;
 }
 
-/* CARD */
+/* CARD CLEAN */
 .card{
   background:#ffffff;
   border-radius:14px;
@@ -38,82 +40,91 @@ h1{
   cursor:pointer;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   transition:transform .15s, box-shadow .15s;
-  position:relative;
-  overflow:hidden;
-}
-
-/* BARRA AZUL */
-.card::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:6px;
-  height:100%;
-  background:#2563eb;
+  border-left:6px solid #2563eb;
 }
 
 .card:hover{
   transform:scale(1.02);
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
 }
 
 /* LOGO */
 .card img{
-  width:42px;
-  height:42px;
+  width:40px;
+  height:40px;
   object-fit:contain;
 }
 
 /* TEXTO */
 .card span{
+  font-weight:bold;
   font-size:15px;
-  font-weight:600;
+}
+
+/* INFO */
+.info{
+  font-size:11px;
+  color:#6b7280;
 }
 
 /* COPIADO */
-.card.copied::before{
-  background:#16a34a;
+.copied{
+  border-left-color:#16a34a !important;
 }
 
 /* MOBILE */
 @media(max-width:480px){
   h1{font-size:18px;}
-  .card span{font-size:14px;}
+  .card img{width:36px;height:36px;}
 }
 </style>
 </head>
 
 <body>
 
-<h1>NBA – Clique no Time para Copiar</h1>
+<h1>NBA DOS AMIGOS</h1>
 
-<div class="list" id="teams"></div>
+<div class="grid" id="teams"></div>
 
 <script src="times.js"></script>
 <script>
 const container = document.getElementById("teams");
 
-/* ORDEM ALFABÉTICA */
+/* CORREÇÃO DOS LOGOS PROBLEMÁTICOS */
+const logoMap = {
+  "denver-nuggets": "nba-denver-nuggets-logo-1.png",
+  "los-angeles-clippers": "nba-la-clippers-logo.png"
+};
+
+/* ORDENAR TIMES */
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
   const div = document.createElement("div");
   div.className = "card";
 
+  const logo = logoMap[team.slug]
+    ? `https://loodibee.com/wp-content/uploads/${logoMap[team.slug]}`
+    : `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+
   div.innerHTML = `
-    <img src="https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png" alt="${team.name}">
-    <span>${team.name}</span>
+    <img src="${logo}" alt="${team.name}">
+    <div>
+      <span>${team.name}</span>
+      <div class="info">Clique para copiar</div>
+    </div>
   `;
 
   div.onclick = ()=>{
     navigator.clipboard.writeText(team.text);
 
     div.classList.add("copied");
+    div.querySelector(".info").innerText = "Texto copiado!";
 
     setTimeout(()=>{
       div.classList.remove("copied");
-    },1000);
+      div.querySelector(".info").innerText = "Clique para copiar";
+    },1200);
   };
 
   container.appendChild(div);
@@ -122,3 +133,4 @@ teams.forEach(team=>{
 
 </body>
 </html>
+
