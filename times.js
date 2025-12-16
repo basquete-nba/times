@@ -55,7 +55,8 @@ Cam Thomas
 Day'Ron Sharpe
 Michael Porter Jr.
 Terance Mann
-Jalen Williams
+Jalen Wilson
+Hollywood Highsmith
 Noah Clowney`
 },
 
