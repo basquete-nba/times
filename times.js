@@ -4,7 +4,7 @@ const teams = [
 name: "Atlanta Hawks",
 slug: "atlanta-hawks",
 text: `Atlanta Hawks
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Atlanta Hawks
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -23,7 +23,7 @@ Zaccharie Risacher`
 name: "Boston Celtics",
 slug: "boston-celtics",
 text: `Boston Celtics
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Boston Celtics
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
@@ -43,7 +43,7 @@ Josh Minott`
 name: "Brooklyn Nets",
 slug: "brooklyn-nets",
 text: `Brooklyn Nets
-Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo do Brooklyn Nets
+Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
