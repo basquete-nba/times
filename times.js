@@ -8,7 +8,6 @@ Por favor, me diga considerando os últimos 10 jogos dos jogadores abaixo.
 Os pontos (pts) feitos, os rebotes (reb) feitos e as assistências (ast) feitas.
 Gostaria em forma de tabela, separada por jogador.
 Pode relacionar os jogos que o jogador não jogou também, ou seja, se for 0 (zero).
-Coloque o menor número de cada quesito (Pontos, rebotes e assistências) na cor vermelha, exceto o número 0.
 O resultado precisa ser em ordem do jogo mais atual no topo da lista e o mais antigo no fim da lista.
 A fonte de pesquisa precisa ser o Google.
 Jalen Johnson
