@@ -229,4 +229,17 @@ function buscarJogos(){
   const texto = "Por favor, quais os jogos de basquete da NBA hoje e amanhã, os horários e onde serão transmitidos? Coloque em formato de tabela.";
   const q = encodeURIComponent(texto);
   window.open(`https://www.google.com/search?q=${q}`, "_blank");
+}
+</script>
+
+<!-- SERVICE WORKER -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
+
 
