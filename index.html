@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jordan</title>
 
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+
 <style>
 *{box-sizing:border-box;}
 
@@ -137,7 +141,7 @@ body{
 
 /* MOBILE */
 @media(max-width:480px){
-  .logo img{{
+  .logo img{
     max-width:160px;
   }
   .nav-btn{
@@ -182,6 +186,7 @@ body{
 </div>
 
 <script src="times.js"></script>
+
 <script>
 const container = document.getElementById("teams");
 
@@ -226,6 +231,14 @@ teams.forEach(team=>{
 });
 </script>
 
+<!-- SERVICE WORKER -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
 </body>
 </html>
+
 
