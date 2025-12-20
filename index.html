@@ -25,55 +25,50 @@ body{
   top:0;
   background:#f3f4f6;
   z-index:100;
-  padding:14px 12px;
+  padding:14px 12px 10px;
   box-shadow:0 2px 6px rgba(0,0,0,.05);
   animation:fadeDown .6s ease;
 }
-
-.topbar{
-  max-width:900px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-}
-
-/* BOTÕES */
-.nav-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  background:#ffffff;
-  border:2px solid #2563eb;
-  color:#2563eb;
-  font-weight:bold;
-  padding:10px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
-  transition:.2s;
-  max-width:160px;
-}
-
-.nav-btn:hover{
-  background:#2563eb;
-  color:#ffffff;
-}
-
-.nav-left{justify-self:start;}
-.nav-right{justify-self:end;}
 
 /* LOGO */
 .logo{
   display:flex;
   justify-content:center;
+  margin-bottom:12px;
 }
 
 .logo img{
   max-width:200px;
   width:100%;
+}
+
+/* ===== BOTÕES ABAIXO DA LOGO ===== */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.nav-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#ffffff;
+  border:2px solid #2563eb;
+  color:#2563eb;
+  font-weight:bold;
+  padding:10px 16px;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  transition:.2s;
+}
+
+.nav-btn:hover{
+  background:#2563eb;
+  color:#ffffff;
 }
 
 /* ===== CONTEÚDO ===== */
@@ -141,13 +136,8 @@ body{
 
 /* MOBILE */
 @media(max-width:480px){
-  .logo img{
-    max-width:160px;
-  }
-  .nav-btn{
-    padding:8px 10px;
-    font-size:12px;
-  }
+  .logo img{max-width:160px;}
+  .nav-btn{font-size:12px;padding:8px 12px;}
 }
 </style>
 </head>
@@ -156,28 +146,31 @@ body{
 
 <!-- ===== TOPO ===== -->
 <div class="header">
-  <div class="topbar">
 
-    <!-- RANKING -->
-    <a class="nav-btn nav-left"
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo-jordan.png" alt="Jordan">
+  </div>
+
+  <!-- BOTÕES -->
+  <div class="nav">
+    <a class="nav-btn"
        href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181"
        target="_blank">
-      📊 Ranking
+      🏀 Ranking
     </a>
 
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="logo-jordan.png" alt="Jordan">
-    </div>
-
-    <!-- PROJETO -->
-    <a class="nav-btn nav-right"
+    <a class="nav-btn"
        href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit"
        target="_blank">
-      📁 Projeto
+      🏀 Projeto
     </a>
 
+    <button class="nav-btn" onclick="buscarJogos()">
+      🏀 Jogos
+    </button>
   </div>
+
 </div>
 
 <!-- ===== LISTA ===== -->
@@ -190,6 +183,7 @@ body{
 <script>
 const container = document.getElementById("teams");
 
+/* LOGOS ESPECIAIS */
 const logoMap = {
   "denver-nuggets": "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
   "los-angeles-clippers": "https://loodibee.com/wp-content/uploads/nba-la-clippers-logo.png"
@@ -229,16 +223,10 @@ teams.forEach(team=>{
 
   container.appendChild(div);
 });
-</script>
 
-<!-- SERVICE WORKER -->
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-
-</body>
-</html>
-
+/* ===== BUSCA JOGOS NBA (IA GOOGLE) ===== */
+function buscarJogos(){
+  const texto = "Por favor, quais os jogos de basquete da NBA hoje e amanhã, os horários e onde serão transmitidos? Coloque em formato de tabela.";
+  const q = encodeURIComponent(texto);
+  window.open(`https://www.google.com/search?q=${q}`, "_blank");
 
