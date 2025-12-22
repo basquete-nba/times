@@ -41,7 +41,7 @@ body{
   100%{opacity:1;transform:scale(1);}
 }
 
-/* ===== TOPO FIXO ===== */
+/* ===== TOPO ===== */
 .header{
   position:sticky;
   top:0;
@@ -49,7 +49,6 @@ body{
   z-index:100;
   padding:14px 12px 10px;
   box-shadow:0 2px 6px rgba(0,0,0,.05);
-  animation:fadeDown .6s ease;
 }
 
 /* LOGO */
@@ -104,7 +103,6 @@ body{
   gap:14px;
   max-width:520px;
   margin:0 auto;
-  animation:fadeUp .6s ease;
 }
 
 /* CARD */
@@ -123,7 +121,6 @@ body{
 
 .card:hover{
   transform:scale(1.02);
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
 }
 
 .card img{
@@ -146,16 +143,6 @@ body{
   border-left-color:#16a34a !important;
 }
 
-/* ANIMAÇÕES */
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-10px);}
-  to{opacity:1;transform:translateY(0);}
-}
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(10px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
 /* MOBILE */
 @media(max-width:480px){
   .logo img{max-width:160px;}
@@ -171,7 +158,7 @@ body{
   <img src="logo-jordan.png" alt="Jordan">
 </div>
 
-<!-- ===== TOPO ===== -->
+<!-- TOPO -->
 <div class="header">
 
   <div class="logo">
@@ -179,20 +166,27 @@ body{
   </div>
 
   <div class="nav">
-    <a class="nav-btn"
-       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181"
-       target="_blank">🏀 Ranking</a>
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
+      🏀 Ranking
+    </a>
 
-    <a class="nav-btn"
-       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit"
-       target="_blank">🏀 Projeto</a>
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">
+      🏀 Projeto
+    </a>
 
     <button class="nav-btn" onclick="buscarJogos()">🏀 Jogos</button>
+
+    <a class="nav-btn" target="_blank"
+       href="https://www.espn.com.br/nba/classificacao">
+      🏀 Tabela
+    </a>
   </div>
 
 </div>
 
-<!-- ===== LISTA ===== -->
+<!-- LISTA -->
 <div class="container">
   <div class="grid" id="teams"></div>
 </div>
@@ -203,30 +197,27 @@ body{
 /* SPLASH REMOVE */
 window.addEventListener("load", ()=>{
   setTimeout(()=>{
-    const splash = document.getElementById("splash");
-    splash.style.opacity = "0";
-    splash.style.transition = "opacity .5s ease";
-    setTimeout(()=>splash.remove(),500);
+    document.getElementById("splash").remove();
   },1200);
 });
 
 const container = document.getElementById("teams");
 
 const logoMap = {
-  "denver-nuggets": "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
-  "los-angeles-clippers": "https://loodibee.com/wp-content/uploads/nba-la-clippers-logo.png"
+  "denver-nuggets":"https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+  "los-angeles-clippers":"https://loodibee.com/wp-content/uploads/nba-la-clippers-logo.png"
 };
 
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
-  const div = document.createElement("div");
-  div.className = "card";
+  const div=document.createElement("div");
+  div.className="card";
 
-  const logo = logoMap[team.slug] ??
+  const logo=logoMap[team.slug] ??
     `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
-  div.innerHTML = `
+  div.innerHTML=`
     <img src="${logo}">
     <div>
       <span>${team.name}</span>
@@ -234,15 +225,14 @@ teams.forEach(team=>{
     </div>
   `;
 
-  div.onclick = ()=>{
+  div.onclick=()=>{
     navigator.clipboard.writeText(team.text);
     div.classList.add("copied");
-    div.querySelector(".info").innerText = "Copiado e pesquisando...";
+    div.querySelector(".info").innerText="Copiado e pesquisando...";
     window.open(`https://www.google.com/search?q=${encodeURIComponent(team.text)}`,"_blank");
-
     setTimeout(()=>{
       div.classList.remove("copied");
-      div.querySelector(".info").innerText = "";
+      div.querySelector(".info").innerText="";
     },1200);
   };
 
@@ -251,18 +241,19 @@ teams.forEach(team=>{
 
 /* BUSCA JOGOS */
 function buscarJogos(){
-  const texto = "Por favor, quais os jogos de basquete da NBA hoje e amanhã, os horários e onde serão transmitidos? Coloque em formato de tabela.";
-  window.open(`https://www.google.com/search?q=${encodeURIComponent(texto)}`, "_blank");
+  const texto="Por favor, quais os jogos de basquete da NBA hoje e amanhã, os horários e onde serão transmitidos? Coloque em formato de tabela.";
+  window.open(`https://www.google.com/search?q=${encodeURIComponent(texto)}`,"_blank");
 }
 </script>
 
 <!-- SERVICE WORKER -->
 <script>
-if ("serviceWorker" in navigator) {
+if("serviceWorker"in navigator){
   navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 
 </body>
 </html>
+
 
