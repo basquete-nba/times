@@ -63,7 +63,7 @@ body{
   width:100%;
 }
 
-/* ===== BOTÕES (2 EM CIMA / 2 EMBAIXO) ===== */
+/* ===== BOTÕES ===== */
 .nav{
   display:grid;
   grid-template-columns:repeat(2, minmax(120px, 1fr));
@@ -107,7 +107,6 @@ body{
   margin:0 auto;
 }
 
-/* CARD */
 .card{
   background:#ffffff;
   border-radius:14px;
@@ -178,9 +177,11 @@ body{
       🏀 Projeto
     </a>
 
-    <button class="nav-btn" onclick="buscarJogos()">
+    <!-- BOTÃO JOGOS ALTERADO -->
+    <a class="nav-btn" target="_blank"
+       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
       🏀 Jogos
-    </button>
+    </a>
 
     <a class="nav-btn" target="_blank"
        href="https://www.espn.com.br/nba/classificacao">
@@ -245,15 +246,6 @@ teams.forEach(team=>{
 
   container.appendChild(div);
 });
-
-/* BUSCA JOGOS */
-function buscarJogos(){
-  const texto="Por favor, quais os jogos de basquete da NBA hoje e amanhã, os horários e onde serão transmitidos? Coloque em formato de tabela.";
-  window.open(
-    `https://www.google.com/search?q=${encodeURIComponent(texto)}`,
-    "_blank"
-  );
-}
 </script>
 
 <!-- SERVICE WORKER -->
