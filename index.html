@@ -19,7 +19,7 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ===== SPLASH ===== */
+/* ===== SPLASH (BOLA NA CESTA) ===== */
 #splash{
   position:fixed;
   inset:0;
@@ -28,17 +28,40 @@ body{
   align-items:center;
   justify-content:center;
   z-index:9999;
+  overflow:hidden;
 }
 
-#splash img{
-  width:200px;
-  animation:logoIntro 1.2s ease forwards;
+.hoop{
+  position:absolute;
+  top:28%;
+  right:30%;
+  font-size:90px;
 }
 
-@keyframes logoIntro{
-  0%{opacity:0;transform:scale(.8);}
-  60%{opacity:1;transform:scale(1.05);}
-  100%{opacity:1;transform:scale(1);}
+.ball{
+  width:70px;
+  height:70px;
+  background:radial-gradient(circle at 30% 30%, #ff9f1c, #c05600);
+  border-radius:50%;
+  position:absolute;
+  bottom:-80px;
+  left:20%;
+  animation:shot 1.2s ease-out forwards;
+}
+
+@keyframes shot{
+  0%{
+    transform:translate(0,0) scale(1);
+    opacity:1;
+  }
+  80%{
+    transform:translate(320px,-420px) scale(.7);
+    opacity:1;
+  }
+  100%{
+    transform:translate(320px,-420px) scale(.5);
+    opacity:0;
+  }
 }
 
 /* ===== TOPO ===== */
@@ -156,7 +179,8 @@ body{
 
 <!-- SPLASH -->
 <div id="splash">
-  <img src="logo-jordan.png" alt="Jordan">
+  <div class="hoop">🧺</div>
+  <div class="ball"></div>
 </div>
 
 <!-- TOPO -->
@@ -177,7 +201,6 @@ body{
       🏀 Projeto
     </a>
 
-    <!-- BOTÃO JOGOS ALTERADO -->
     <a class="nav-btn" target="_blank"
        href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
       🏀 Jogos
@@ -203,7 +226,7 @@ body{
 window.addEventListener("load", ()=>{
   setTimeout(()=>{
     document.getElementById("splash").remove();
-  },1200);
+  },1300);
 });
 
 const container = document.getElementById("teams");
