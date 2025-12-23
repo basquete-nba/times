@@ -34,8 +34,9 @@ body{
 /* CESTA */
 .hoop{
   position:absolute;
-  top:20%;
+  top:18%;
   width:220px;
+  z-index:2;
 }
 
 .hoop img{
@@ -49,24 +50,27 @@ body{
   left:50%;
   width:80px;
   transform:translateX(-50%);
-  animation:shot 1.3s ease-out forwards;
+  animation:shot 1.4s ease-out forwards;
+  z-index:3;
 }
 
 .ball img{
   width:100%;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO BOLA ATRAVESSANDO A REDE */
 @keyframes shot{
   0%{
     transform:translate(-50%,0) scale(1);
     opacity:1;
   }
-  70%{
-    transform:translate(-50%,-420px) scale(.8);
+  65%{
+    transform:translate(-50%,-380px) scale(.85);
+    opacity:1;
   }
-  85%{
-    transform:translate(-50%,-480px) scale(.75);
+  80%{
+    transform:translate(-50%,-430px) scale(.8);
+    opacity:1;
   }
   100%{
     transform:translate(-50%,-520px) scale(.7);
@@ -196,6 +200,9 @@ body{
   <div class="ball">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Bola de basquete">
   </div>
+
+  <!-- SOM -->
+  <audio id="swish" src="swish.mp3" preload="auto"></audio>
 </div>
 
 <!-- TOPO -->
@@ -237,11 +244,17 @@ body{
 <script src="times.js"></script>
 
 <script>
-/* REMOVE SPLASH */
+/* SOM + REMOÇÃO SPLASH */
 window.addEventListener("load", ()=>{
+  const swish = document.getElementById("swish");
+
+  setTimeout(()=>{
+    swish.play().catch(()=>{});
+  },800);
+
   setTimeout(()=>{
     document.getElementById("splash").remove();
-  },1400);
+  },1500);
 });
 
 const container = document.getElementById("teams");
@@ -267,7 +280,7 @@ teams.forEach(team=>{
     div.classList.add("copied");
     div.querySelector(".info").innerText="Copiado e pesquisando...";
     window.open(
-      `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
+      \`https://www.google.com/search?q=\${encodeURIComponent(team.text)}\`,
       "_blank"
     );
     setTimeout(()=>{
