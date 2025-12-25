@@ -40,15 +40,14 @@ body{
   width:100%;
 }
 
-/* ANIMAÇÃO QUICANDO */
 @keyframes bounce{
-  0%   { transform:translateY(0); }
-  20%  { transform:translateY(-140px); }
-  40%  { transform:translateY(0); }
-  55%  { transform:translateY(-80px); }
-  70%  { transform:translateY(0); }
-  82%  { transform:translateY(-35px); }
-  100% { transform:translateY(0); }
+  0%{transform:translateY(0);}
+  20%{transform:translateY(-140px);}
+  40%{transform:translateY(0);}
+  55%{transform:translateY(-80px);}
+  70%{transform:translateY(0);}
+  82%{transform:translateY(-35px);}
+  100%{transform:translateY(0);}
 }
 
 /* ===== TOPO ===== */
@@ -61,7 +60,6 @@ body{
   box-shadow:0 2px 6px rgba(0,0,0,.05);
 }
 
-/* LOGO */
 .logo{
   display:flex;
   justify-content:center;
@@ -199,7 +197,6 @@ body{
       🏀 Tabela
     </a>
   </div>
-
 </div>
 
 <!-- LISTA -->
@@ -219,15 +216,26 @@ window.addEventListener("load", ()=>{
 
 const container = document.getElementById("teams");
 
+/* LOGOS CORRIGIDAS */
+const logoMap = {
+  "denver-nuggets":
+    "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+
+  "los-angeles-clippers":
+    "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282015%29.svg"
+};
+
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
-  const div=document.createElement("div");
-  div.className="card";
+  const div = document.createElement("div");
+  div.className = "card";
 
-  const logo=`https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+  const logo = logoMap[team.slug]
+    ? logoMap[team.slug]
+    : `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
-  div.innerHTML=`
+  div.innerHTML = `
     <img src="${logo}">
     <div>
       <span>${team.name}</span>
@@ -235,14 +243,15 @@ teams.forEach(team=>{
     </div>
   `;
 
-  div.onclick=()=>{
+  div.onclick = ()=>{
     navigator.clipboard.writeText(team.text);
     div.classList.add("copied");
-    div.querySelector(".info").innerText="Copiado e pesquisando...";
+    div.querySelector(".info").innerText = "Copiado e pesquisando...";
     window.open(
-      `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
+      \`https://www.google.com/search?q=\${encodeURIComponent(team.text)}\`,
       "_blank"
     );
+
     setTimeout(()=>{
       div.classList.remove("copied");
       div.querySelector(".info").innerText="";
