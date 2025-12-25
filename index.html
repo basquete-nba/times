@@ -65,7 +65,7 @@ body{
 /* BOTÕES */
 .nav{
   display:grid;
-  grid-template-columns:repeat(2,minmax(120px,1fr));
+  grid-template-columns:repeat(2, minmax(120px, 1fr));
   gap:12px;
   max-width:420px;
   margin:0 auto;
@@ -151,24 +151,16 @@ body{
 
   <div class="nav">
     <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
-      🏀 Ranking
-    </a>
+       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">🏀 Ranking</a>
 
     <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">
-      🏀 Projeto
-    </a>
+       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">🏀 Projeto</a>
 
     <a class="nav-btn" target="_blank"
-       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
-      🏀 Jogos
-    </a>
+       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">🏀 Jogos</a>
 
     <a class="nav-btn" target="_blank"
-       href="https://www.espn.com.br/nba/classificacao">
-      🏀 Tabela
-    </a>
+       href="https://www.espn.com.br/nba/classificacao">🏀 Tabela</a>
   </div>
 </div>
 
@@ -179,16 +171,14 @@ body{
 <script src="times.js"></script>
 
 <script>
-window.addEventListener("load", ()=>{
-  setTimeout(()=>{
-    document.getElementById("splash")?.remove();
-  }, 1500);
-});
+/* REMOVE SPLASH SEMPRE */
+setTimeout(() => {
+  const splash = document.getElementById("splash");
+  if (splash) splash.remove();
+}, 1600);
 
-/* PROTEÇÃO CASO times.js NÃO CARREGUE */
-if (typeof teams === "undefined") {
-  console.error("Arquivo times.js não carregou.");
-} else {
+/* SÓ EXECUTA SE times EXISTIR */
+if (typeof window.teams !== "undefined" && Array.isArray(teams)) {
 
   const container = document.getElementById("teams");
 
@@ -202,13 +192,14 @@ if (typeof teams === "undefined") {
   teams.sort((a,b)=>a.name.localeCompare(b.name));
 
   teams.forEach(team=>{
-    const div=document.createElement("div");
-    div.className="card";
+    const div = document.createElement("div");
+    div.className = "card";
 
-    const logo = logoMap[team.slug]
-      ?? `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+    const logo =
+      logoMap[team.slug] ||
+      `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
-    div.innerHTML=`
+    div.innerHTML = `
       <img src="${logo}">
       <div>
         <span>${team.name}</span>
@@ -216,10 +207,10 @@ if (typeof teams === "undefined") {
       </div>
     `;
 
-    div.onclick=()=>{
+    div.onclick = () => {
       navigator.clipboard.writeText(team.text);
       div.classList.add("copied");
-      div.querySelector(".info").innerText="Copiado e pesquisando...";
+      div.querySelector(".info").innerText = "Copiado e pesquisando...";
       window.open(
         "https://www.google.com/search?q=" + encodeURIComponent(team.text),
         "_blank"
@@ -232,6 +223,7 @@ if (typeof teams === "undefined") {
 
     container.appendChild(div);
   });
+
 }
 </script>
 
