@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jordan</title>
 
-<!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2563eb">
 
@@ -19,7 +18,7 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ===== SPLASH ===== */
+/* SPLASH */
 #splash{
   position:fixed;
   inset:0;
@@ -30,28 +29,24 @@ body{
   z-index:9999;
 }
 
-/* BOLA */
 .ball{
   width:90px;
   animation:bounce 1.4s ease-in-out infinite;
 }
 
-.ball img{
-  width:100%;
-}
+.ball img{ width:100%; }
 
-/* ANIMAÇÃO QUICANDO */
 @keyframes bounce{
-  0%   { transform:translateY(0); }
-  20%  { transform:translateY(-140px); }
-  40%  { transform:translateY(0); }
-  55%  { transform:translateY(-80px); }
-  70%  { transform:translateY(0); }
-  82%  { transform:translateY(-35px); }
-  100% { transform:translateY(0); }
+  0%{transform:translateY(0)}
+  20%{transform:translateY(-140px)}
+  40%{transform:translateY(0)}
+  55%{transform:translateY(-80px)}
+  70%{transform:translateY(0)}
+  82%{transform:translateY(-35px)}
+  100%{transform:translateY(0)}
 }
 
-/* ===== TOPO ===== */
+/* TOPO */
 .header{
   position:sticky;
   top:0;
@@ -61,7 +56,6 @@ body{
   box-shadow:0 2px 6px rgba(0,0,0,.05);
 }
 
-/* LOGO */
 .logo{
   display:flex;
   justify-content:center;
@@ -73,7 +67,7 @@ body{
   width:100%;
 }
 
-/* ===== BOTÕES ===== */
+/* BOTÕES */
 .nav{
   display:grid;
   grid-template-columns:repeat(2, minmax(120px, 1fr));
@@ -87,13 +81,12 @@ body{
   align-items:center;
   justify-content:center;
   gap:8px;
-  background:#ffffff;
+  background:#fff;
   border:2px solid #2563eb;
   color:#2563eb;
   font-weight:bold;
   padding:10px 12px;
   border-radius:12px;
-  cursor:pointer;
   text-decoration:none;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   transition:.2s;
@@ -101,13 +94,11 @@ body{
 
 .nav-btn:hover{
   background:#2563eb;
-  color:#ffffff;
+  color:#fff;
 }
 
-/* ===== CONTEÚDO ===== */
-.container{
-  padding:20px;
-}
+/* LISTA */
+.container{ padding:20px; }
 
 .grid{
   display:grid;
@@ -118,7 +109,7 @@ body{
 }
 
 .card{
-  background:#ffffff;
+  background:#fff;
   border-radius:14px;
   padding:14px 16px;
   display:flex;
@@ -130,9 +121,7 @@ body{
   border-left:6px solid #2563eb;
 }
 
-.card:hover{
-  transform:scale(1.02);
-}
+.card:hover{ transform:scale(1.02); }
 
 .card img{
   width:40px;
@@ -167,42 +156,24 @@ body{
 <!-- SPLASH -->
 <div id="splash">
   <div class="ball">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Bola de basquete">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png">
   </div>
 </div>
 
 <!-- TOPO -->
 <div class="header">
-
   <div class="logo">
     <img src="logo-jordan.png" alt="Jordan">
   </div>
 
   <div class="nav">
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
-      🏀 Ranking
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">
-      🏀 Projeto
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
-      🏀 Jogos
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://www.espn.com.br/nba/classificacao">
-      🏀 Tabela
-    </a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">🏀 Ranking</a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">🏀 Projeto</a>
+    <a class="nav-btn" target="_blank" href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">🏀 Jogos</a>
+    <a class="nav-btn" target="_blank" href="https://www.espn.com.br/nba/classificacao">🏀 Tabela</a>
   </div>
-
 </div>
 
-<!-- LISTA -->
 <div class="container">
   <div class="grid" id="teams"></div>
 </div>
@@ -210,35 +181,44 @@ body{
 <script src="times.js"></script>
 
 <script>
-/* REMOVE SPLASH */
 window.addEventListener("load", ()=>{
   setTimeout(()=>{
-    document.getElementById("splash").remove();
+    document.getElementById("splash")?.remove();
   },1500);
 });
 
 const container = document.getElementById("teams");
 
+/* LOGOS ESPECIAIS (Wikipedia) */
+const customLogos = {
+  "denver-nuggets":
+    "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+
+  "los-angeles-clippers":
+    "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282024%29.svg"
+};
+
 teams.sort((a,b)=>a.name.localeCompare(b.name));
 
 teams.forEach(team=>{
-  const div=document.createElement("div");
-  div.className="card";
+  const div = document.createElement("div");
+  div.className = "card";
 
-  const logo=`https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+  const logo = customLogos[team.slug]
+    || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
-  div.innerHTML=`
-    <img src="${logo}">
+  div.innerHTML = `
+    <img src="${logo}" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
     <div>
       <span>${team.name}</span>
       <div class="info"></div>
     </div>
   `;
 
-  div.onclick=()=>{
+  div.onclick = () => {
     navigator.clipboard.writeText(team.text);
     div.classList.add("copied");
-    div.querySelector(".info").innerText="Copiado e pesquisando...";
+    div.querySelector(".info").innerText = "Copiado e pesquisando...";
     window.open(
       `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
       "_blank"
