@@ -139,10 +139,6 @@ body{
   color:#6b7280;
 }
 
-.copied{
-  border-left-color:#16a34a !important;
-}
-
 /* MOBILE */
 @media(max-width:480px){
   .logo img{max-width:160px;}
@@ -167,36 +163,12 @@ body{
   </div>
 
   <div class="nav">
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
-      🏀 Ranking
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">
-      🏀 Projeto
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
-      🏀 Jogos
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://www.espn.com.br/nba/classificacao">
-      🏀 Tabela
-    </a>
-
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">
-      🏀 Gabarito
-    </a>
-
-    <!-- NOVO BOTÃO -->
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">
-      🏀 Partiu Mil
-    </a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">🏀 Ranking</a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">🏀 Projeto</a>
+    <a class="nav-btn" target="_blank" href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">🏀 Jogos</a>
+    <a class="nav-btn" target="_blank" href="https://www.espn.com.br/nba/classificacao">🏀 Tabela</a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">🏀 Gabarito</a>
+    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">🏀 Partiu Mil</a>
   </div>
 </div>
 
@@ -207,56 +179,48 @@ body{
 <script src="times.js"></script>
 
 <script>
+// REMOVE SPLASH SEMPRE
 window.addEventListener("load", ()=>{
   setTimeout(()=>{
-    document.getElementById("splash")?.remove();
-  },1500);
+    const splash = document.getElementById("splash");
+    if(splash) splash.remove();
+  },1200);
 });
 
-const container = document.getElementById("teams");
+// PROTEÇÃO CONTRA ERRO
+try{
+  if(typeof teams !== "undefined"){
+    const container = document.getElementById("teams");
 
-/* LOGOS ESPECIAIS */
-const customLogos = {
-  "denver-nuggets":
-    "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+    const customLogos = {
+      "denver-nuggets":
+        "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+      "los-angeles-clippers":
+        "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282024%29.svg"
+    };
 
-  "los-angeles-clippers":
-    "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282024%29.svg"
-};
+    teams.sort((a,b)=>a.name.localeCompare(b.name));
 
-teams.sort((a,b)=>a.name.localeCompare(b.name));
+    teams.forEach(team=>{
+      const div=document.createElement("div");
+      div.className="card";
 
-teams.forEach(team=>{
-  const div = document.createElement("div");
-  div.className = "card";
+      const logo = customLogos[team.slug]
+        || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
-  const logo = customLogos[team.slug]
-    || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+      div.innerHTML=`
+        <img src="${logo}" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
+        <div>
+          <span>${team.name}</span>
+        </div>
+      `;
 
-  div.innerHTML = `
-    <img src="${logo}" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
-    <div>
-      <span>${team.name}</span>
-      <div class="info"></div>
-    </div>
-  `;
-
-  div.onclick = () => {
-    navigator.clipboard.writeText(team.text);
-    div.classList.add("copied");
-    div.querySelector(".info").innerText = "Copiado e pesquisando...";
-    window.open(
-      \`https://www.google.com/search?q=\${encodeURIComponent(team.text)}\`,
-      "_blank"
-    );
-    setTimeout(()=>{
-      div.classList.remove("copied");
-      div.querySelector(".info").innerText="";
-    },1200);
-  };
-
-  container.appendChild(div);
-});
+      container.appendChild(div);
+    });
+  }
+}catch(e){
+  console.warn("Erro ignorado:", e);
+}
 </script>
 
 <script>
@@ -267,4 +231,3 @@ if("serviceWorker" in navigator){
 
 </body>
 </html>
-
