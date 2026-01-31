@@ -187,10 +187,15 @@ body{
       🏀 Tabela
     </a>
 
-    <!-- NOVO BOTÃO -->
     <a class="nav-btn" target="_blank"
        href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">
       🏀 Gabarito
+    </a>
+
+    <!-- NOVO BOTÃO -->
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">
+      🏀 Partiu Mil
     </a>
   </div>
 </div>
@@ -241,7 +246,7 @@ teams.forEach(team=>{
     div.classList.add("copied");
     div.querySelector(".info").innerText = "Copiado e pesquisando...";
     window.open(
-      `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
+      \`https://www.google.com/search?q=\${encodeURIComponent(team.text)}\`,
       "_blank"
     );
     setTimeout(()=>{
@@ -262,3 +267,4 @@ if("serviceWorker" in navigator){
 
 </body>
 </html>
+
