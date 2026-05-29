@@ -34,7 +34,9 @@ body{
   animation:bounce 1.4s ease-in-out infinite;
 }
 
-.ball img{ width:100%; }
+.ball img{
+  width:100%;
+}
 
 @keyframes bounce{
   0%{transform:translateY(0)}
@@ -73,7 +75,7 @@ body{
   grid-template-columns:repeat(2, minmax(120px, 1fr));
   gap:12px;
   max-width:420px;
-  margin:0 auto;
+  margin:0 auto 18px;
 }
 
 .nav-btn{
@@ -97,8 +99,44 @@ body{
   color:#fff;
 }
 
+/* BOTÃO FUTEBOL */
+.futebol-area{
+  display:flex;
+  justify-content:center;
+}
+
+.futebol-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background:#fff;
+  border:2px solid #2563eb;
+  color:#2563eb;
+  font-weight:bold;
+  font-size:20px;
+  padding:12px 20px;
+  border-radius:14px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  transition:.2s;
+  width:100%;
+  max-width:420px;
+}
+
+.futebol-btn:hover{
+  background:#2563eb;
+  color:#fff;
+}
+
+.futebol-btn span{
+  font-size:34px;
+}
+
 /* LISTA */
-.container{ padding:20px; }
+.container{
+  padding:20px;
+}
 
 .grid{
   display:grid;
@@ -121,7 +159,9 @@ body{
   border-left:6px solid #2563eb;
 }
 
-.card:hover{ transform:scale(1.02); }
+.card:hover{
+  transform:scale(1.02);
+}
 
 .card img{
   width:40px;
@@ -141,8 +181,24 @@ body{
 
 /* MOBILE */
 @media(max-width:480px){
-  .logo img{max-width:160px;}
-  .nav-btn{font-size:12px;padding:8px;}
+
+  .logo img{
+    max-width:160px;
+  }
+
+  .nav-btn{
+    font-size:12px;
+    padding:8px;
+  }
+
+  .futebol-btn{
+    font-size:16px;
+    padding:10px;
+  }
+
+  .futebol-btn span{
+    font-size:28px;
+  }
 }
 </style>
 </head>
@@ -158,20 +214,57 @@ body{
 
 <!-- TOPO -->
 <div class="header">
+
   <div class="logo">
     <img src="logo-jordan.png" alt="Jordan">
   </div>
 
+  <!-- BOTÕES -->
   <div class="nav">
-    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">🏀 Ranking</a>
-    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1XGKgw42flbO-dOlfRD16bH4UKIapDV3y/edit">🏀 Projeto</a>
-    <a class="nav-btn" target="_blank" href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">🏀 Jogos</a>
-    <a class="nav-btn" target="_blank" href="https://www.espn.com.br/nba/classificacao">🏀 Tabela</a>
-    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">🏀 Gabarito</a>
-    <a class="nav-btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">🏀 Partiu Mil</a>
+
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
+      🏀 Ranking
+    </a>
+
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">
+      🏀 Partiu Mil
+    </a>
+
+    <a class="nav-btn" target="_blank"
+       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
+      🏀 Jogos
+    </a>
+
+    <a class="nav-btn" target="_blank"
+       href="https://www.espn.com.br/nba/classificacao">
+      🏀 Tabela
+    </a>
+
+    <a class="nav-btn" target="_blank"
+       href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">
+      🏀 Gabarito
+    </a>
+
+    <!-- NOVO BOTÃO JOGADORES -->
+    <a class="nav-btn" href="#teams">
+      🏀 Jogadores
+    </a>
+
   </div>
+
+  <!-- BOTÃO FUTEBOL -->
+  <div class="futebol-area">
+    <a class="futebol-btn" target="_blank"
+       href="https://premierfcapp.com">
+      <span>⚽</span> Futebol
+    </a>
+  </div>
+
 </div>
 
+<!-- LISTA -->
 <div class="container">
   <div class="grid" id="teams"></div>
 </div>
@@ -179,50 +272,80 @@ body{
 <script src="times.js"></script>
 
 <script>
-// REMOVE SPLASH SEMPRE
+
+/* REMOVE SPLASH */
 window.addEventListener("load", ()=>{
   setTimeout(()=>{
-    const splash = document.getElementById("splash");
+    const splash=document.getElementById("splash");
     if(splash) splash.remove();
   },1200);
 });
 
-// PROTEÇÃO CONTRA ERRO
+/* PROTEÇÃO */
 try{
-  if(typeof teams !== "undefined"){
-    const container = document.getElementById("teams");
 
-    const customLogos = {
+  if(typeof teams !== "undefined"){
+
+    const container=document.getElementById("teams");
+
+    /* LOGOS ESPECIAIS */
+    const customLogos={
+
       "denver-nuggets":
-        "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+      "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
+
       "los-angeles-clippers":
-        "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282024%29.svg"
+      "https://upload.wikimedia.org/wikipedia/en/b/bb/Los_Angeles_Clippers_%282024%29.svg"
+
     };
 
     teams.sort((a,b)=>a.name.localeCompare(b.name));
 
     teams.forEach(team=>{
+
       const div=document.createElement("div");
       div.className="card";
 
-      const logo = customLogos[team.slug]
+      const logo=
+        customLogos[team.slug]
         || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
       div.innerHTML=`
-        <img src="${logo}" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'">
+        <img
+          src="${logo}"
+          onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'"
+        >
+
         <div>
           <span>${team.name}</span>
         </div>
       `;
 
+      div.onclick=()=>{
+
+        navigator.clipboard.writeText(team.text);
+
+        window.open(
+          `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
+          "_blank"
+        );
+
+      };
+
       container.appendChild(div);
+
     });
+
   }
+
 }catch(e){
+
   console.warn("Erro ignorado:", e);
+
 }
 </script>
 
+<!-- SERVICE WORKER -->
 <script>
 if("serviceWorker" in navigator){
   navigator.serviceWorker.register("service-worker.js");
