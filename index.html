@@ -9,7 +9,9 @@
 <meta name="theme-color" content="#2563eb">
 
 <style>
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -92,6 +94,7 @@ body{
   text-decoration:none;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   transition:.2s;
+  cursor:pointer;
 }
 
 .nav-btn:hover{
@@ -99,7 +102,7 @@ body{
   color:#fff;
 }
 
-/* BOTÃO FUTEBOL */
+/* FUTEBOL */
 .futebol-area{
   display:flex;
   justify-content:center;
@@ -138,12 +141,17 @@ body{
   padding:20px;
 }
 
+/* COMEÇA ESCONDIDO */
 .grid{
-  display:grid;
+  display:none;
   grid-template-columns:1fr;
   gap:14px;
   max-width:520px;
   margin:0 auto;
+}
+
+.grid.active{
+  display:grid;
 }
 
 .card{
@@ -215,6 +223,7 @@ body{
 <!-- TOPO -->
 <div class="header">
 
+  <!-- LOGO -->
   <div class="logo">
     <img src="logo-jordan.png" alt="Jordan">
   </div>
@@ -247,14 +256,14 @@ body{
       🏀 Gabarito
     </a>
 
-    <!-- NOVO BOTÃO JOGADORES -->
-    <a class="nav-btn" href="#teams">
+    <!-- BOTÃO JOGADORES -->
+    <button class="nav-btn" onclick="toggleJogadores()">
       🏀 Jogadores
-    </a>
+    </button>
 
   </div>
 
-  <!-- BOTÃO FUTEBOL -->
+  <!-- FUTEBOL -->
   <div class="futebol-area">
     <a class="futebol-btn" target="_blank"
        href="https://premierfcapp.com">
@@ -275,11 +284,27 @@ body{
 
 /* REMOVE SPLASH */
 window.addEventListener("load", ()=>{
+
   setTimeout(()=>{
+
     const splash=document.getElementById("splash");
-    if(splash) splash.remove();
+
+    if(splash){
+      splash.remove();
+    }
+
   },1200);
+
 });
+
+/* MOSTRAR / ESCONDER JOGADORES */
+function toggleJogadores(){
+
+  const grid=document.getElementById("teams");
+
+  grid.classList.toggle("active");
+
+}
 
 /* PROTEÇÃO */
 try{
@@ -304,6 +329,7 @@ try{
     teams.forEach(team=>{
 
       const div=document.createElement("div");
+
       div.className="card";
 
       const logo=
@@ -311,6 +337,7 @@ try{
         || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
 
       div.innerHTML=`
+
         <img
           src="${logo}"
           onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'"
@@ -319,6 +346,7 @@ try{
         <div>
           <span>${team.name}</span>
         </div>
+
       `;
 
       div.onclick=()=>{
