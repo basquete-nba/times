@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#2563eb">
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -20,7 +21,10 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* SPLASH */
+/* =====================================================
+   SPLASH
+===================================================== */
+
 #splash{
   position:fixed;
   inset:0;
@@ -41,16 +45,41 @@ body{
 }
 
 @keyframes bounce{
-  0%{transform:translateY(0)}
-  20%{transform:translateY(-140px)}
-  40%{transform:translateY(0)}
-  55%{transform:translateY(-80px)}
-  70%{transform:translateY(0)}
-  82%{transform:translateY(-35px)}
-  100%{transform:translateY(0)}
+
+  0%{
+    transform:translateY(0)
+  }
+
+  20%{
+    transform:translateY(-140px)
+  }
+
+  40%{
+    transform:translateY(0)
+  }
+
+  55%{
+    transform:translateY(-80px)
+  }
+
+  70%{
+    transform:translateY(0)
+  }
+
+  82%{
+    transform:translateY(-35px)
+  }
+
+  100%{
+    transform:translateY(0)
+  }
+
 }
 
-/* TOPO */
+/* =====================================================
+   TOPO
+===================================================== */
+
 .header{
   position:sticky;
   top:0;
@@ -71,7 +100,10 @@ body{
   width:100%;
 }
 
-/* BOTÕES */
+/* =====================================================
+   BOTÕES PRINCIPAIS
+===================================================== */
+
 .nav{
   display:grid;
   grid-template-columns:repeat(2, minmax(120px, 1fr));
@@ -95,6 +127,7 @@ body{
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   transition:.2s;
   cursor:pointer;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .nav-btn:hover{
@@ -102,46 +135,60 @@ body{
   color:#fff;
 }
 
-/* FUTEBOL */
-.futebol-area{
-  display:flex;
-  justify-content:center;
+/* =====================================================
+   ÁREA FUTEBOL + ELENCOS
+===================================================== */
+
+.dual-area{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:420px;
+  margin:0 auto;
 }
 
-.futebol-btn{
+.dual-btn{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:8px;
   background:#fff;
   border:2px solid #2563eb;
   color:#2563eb;
   font-weight:bold;
-  font-size:20px;
-  padding:12px 20px;
+  font-size:18px;
+  padding:10px 8px;
   border-radius:14px;
   text-decoration:none;
   box-shadow:0 4px 10px rgba(0,0,0,.08);
   transition:.2s;
-  width:100%;
-  max-width:420px;
+  cursor:pointer;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.futebol-btn:hover{
+.dual-btn:hover{
   background:#2563eb;
   color:#fff;
 }
 
-.futebol-btn span{
-  font-size:34px;
+.dual-btn .icon{
+  font-size:28px;
 }
 
-/* LISTA */
+.dual-btn.elencos-btn{
+  font-size:18px;
+}
+
+/* =====================================================
+   LISTAS
+===================================================== */
+
 .container{
   padding:20px;
 }
 
-/* COMEÇA ESCONDIDO */
+/* TODAS AS LISTAS COMEÇAM ESCONDIDAS */
+
 .grid{
   display:none;
   grid-template-columns:1fr;
@@ -153,6 +200,10 @@ body{
 .grid.active{
   display:grid;
 }
+
+/* =====================================================
+   CARTÕES DOS TIMES
+===================================================== */
 
 .card{
   background:#fff;
@@ -187,7 +238,82 @@ body{
   color:#6b7280;
 }
 
-/* MOBILE */
+/* =====================================================
+   MODAL DOS ELENCOS
+===================================================== */
+
+#rosterModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  z-index:99999;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+#rosterModal.active{
+  display:flex;
+}
+
+.roster-box{
+  position:relative;
+  width:100%;
+  max-width:650px;
+  max-height:95vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.roster-image{
+  max-width:100%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 5px 30px rgba(0,0,0,.5);
+}
+
+.close-roster{
+  position:absolute;
+  top:-12px;
+  right:-8px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:2px solid #fff;
+  background:#ef4444;
+  color:#fff;
+  font-size:25px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* =====================================================
+   TÍTULO DA IMAGEM
+===================================================== */
+
+.roster-title{
+  position:absolute;
+  bottom:-38px;
+  left:0;
+  right:0;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:480px){
 
   .logo img{
@@ -199,122 +325,464 @@ body{
     padding:8px;
   }
 
-  .futebol-btn{
-    font-size:16px;
-    padding:10px;
+  .dual-btn{
+    font-size:15px;
+    padding:9px 5px;
   }
 
-  .futebol-btn span{
-    font-size:28px;
+  .dual-btn .icon{
+    font-size:24px;
   }
+
+  .container{
+    padding:20px 12px;
+  }
+
+  .card{
+    padding:12px 14px;
+  }
+
+  .card img{
+    width:38px;
+    height:38px;
+  }
+
+  .close-roster{
+    right:0;
+    top:-8px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- SPLASH -->
+<!-- =====================================================
+     SPLASH
+===================================================== -->
+
 <div id="splash">
+
   <div class="ball">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png">
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png"
+      alt="Bola de basquete"
+    >
+
   </div>
+
 </div>
 
-<!-- TOPO -->
+
+<!-- =====================================================
+     TOPO
+===================================================== -->
+
 <div class="header">
 
   <!-- LOGO -->
+
   <div class="logo">
-    <img src="logo-jordan.png" alt="Jordan">
+
+    <img
+      src="logo-jordan.png"
+      alt="Jordan"
+    >
+
   </div>
 
+
   <!-- BOTÕES -->
+
   <div class="nav">
 
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181">
+    <a
+      class="nav-btn"
+      target="_blank"
+      href="https://docs.google.com/spreadsheets/d/1dETGVAIRp6-EU1Jud_d-C1_Cld8gjp-A/edit?gid=1137651181"
+    >
       🏀 RANKING
     </a>
 
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374">
+
+    <a
+      class="nav-btn"
+      target="_blank"
+      href="https://docs.google.com/spreadsheets/d/1rIoBQZp0EIXRtls1LcAVnQp0qVHkoLBs/edit?gid=1707477374#gid=1707477374"
+    >
       🏀 PLANEJAMENTO
     </a>
 
-    <a class="nav-btn" target="_blank"
-       href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/">
+
+    <a
+      class="nav-btn"
+      target="_blank"
+      href="https://jumperbrasil.com.br/basquete-nba-programacao-jogos-tv-aberta-fechada-onde-assistir-online-app/"
+    >
       🏀 JOGOS DO DIA
     </a>
 
-    <a class="nav-btn" target="_blank"
-       href="https://www.espn.com.br/nba/classificacao">
+
+    <a
+      class="nav-btn"
+      target="_blank"
+      href="https://www.espn.com.br/nba/classificacao"
+    >
       🏀 CLASSIFICAÇÃO
     </a>
 
-    <a class="nav-btn" target="_blank"
-       href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632">
+
+    <a
+      class="nav-btn"
+      target="_blank"
+      href="https://docs.google.com/spreadsheets/d/1fnNej-4R0Yn4QVddtjembrMtv_-UR4_b/edit?gid=1154196632#gid=1154196632"
+    >
       🏀 GABARITO
     </a>
 
-    <!-- BOTÃO JOGADORES -->
-    <button class="nav-btn" onclick="toggleJogadores()">
+
+    <!-- JOGADORES -->
+
+    <button
+      class="nav-btn"
+      onclick="toggleJogadores()"
+    >
       🏀 JOGADORES
     </button>
 
   </div>
 
-  <!-- FUTEBOL -->
-  <div class="futebol-area">
-    <a class="futebol-btn" target="_blank"
-       href="https://premierfcapp.com">
-      <span>⚽</span> FUTEBOL
+
+  <!-- =================================================
+       FUTEBOL + ELENCOS
+  ================================================== -->
+
+  <div class="dual-area">
+
+
+    <!-- FUTEBOL -->
+
+    <a
+      class="dual-btn"
+      target="_blank"
+      href="https://premierfcapp.com"
+    >
+
+      <span class="icon">⚽</span>
+
+      FUTEBOL
+
     </a>
+
+
+    <!-- ELENCOS -->
+
+    <button
+      class="dual-btn elencos-btn"
+      onclick="toggleElencos()"
+    >
+
+      <span class="icon">🏀</span>
+
+      ELENCOS
+
+    </button>
+
+
   </div>
 
 </div>
 
-<!-- LISTA -->
+
+<!-- =====================================================
+     LISTAS
+===================================================== -->
+
 <div class="container">
-  <div class="grid" id="teams"></div>
+
+
+  <!-- LISTA JOGADORES -->
+
+  <div
+    class="grid"
+    id="teams"
+  ></div>
+
+
+  <!-- LISTA ELENCOS -->
+
+  <div
+    class="grid"
+    id="rosterTeams"
+  ></div>
+
+
 </div>
+
+
+<!-- =====================================================
+     MODAL DOS ELENCOS
+===================================================== -->
+
+<div
+  id="rosterModal"
+  onclick="fecharElenco(event)"
+>
+
+  <div class="roster-box">
+
+    <button
+      class="close-roster"
+      onclick="fecharModal()"
+    >
+      ×
+    </button>
+
+
+    <img
+      id="rosterImage"
+      class="roster-image"
+      src=""
+      alt="Elenco do time"
+    >
+
+
+    <div
+      id="rosterTitle"
+      class="roster-title"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     TIMES.JS
+===================================================== -->
 
 <script src="times.js"></script>
 
+
 <script>
 
-/* REMOVE SPLASH */
+/* =====================================================
+   REMOVE SPLASH
+===================================================== */
+
 window.addEventListener("load", ()=>{
 
   setTimeout(()=>{
 
-    const splash=document.getElementById("splash");
+    const splash =
+      document.getElementById("splash");
 
     if(splash){
+
       splash.remove();
+
     }
 
   },1200);
 
 });
 
-/* MOSTRAR / ESCONDER JOGADORES */
-function toggleJogadores(){
 
-  const grid=document.getElementById("teams");
+/* =====================================================
+   CONTROLES DOS BOTÕES
+===================================================== */
 
-  grid.classList.toggle("active");
+function esconderListas(){
+
+  document
+    .getElementById("teams")
+    .classList.remove("active");
+
+  document
+    .getElementById("rosterTeams")
+    .classList.remove("active");
 
 }
 
-/* PROTEÇÃO */
+
+/* =====================================================
+   JOGADORES
+===================================================== */
+
+function toggleJogadores(){
+
+  const grid =
+    document.getElementById("teams");
+
+  const jaEstaAberto =
+    grid.classList.contains("active");
+
+  esconderListas();
+
+  if(!jaEstaAberto){
+
+    grid.classList.add("active");
+
+    window.scrollTo({
+      top:document.body.scrollHeight,
+      behavior:"smooth"
+    });
+
+  }
+
+}
+
+
+/* =====================================================
+   ELENCOS
+===================================================== */
+
+function toggleElencos(){
+
+  const grid =
+    document.getElementById("rosterTeams");
+
+  const jaEstaAberto =
+    grid.classList.contains("active");
+
+  esconderListas();
+
+  if(!jaEstaAberto){
+
+    grid.classList.add("active");
+
+    window.scrollTo({
+      top:document.body.scrollHeight,
+      behavior:"smooth"
+    });
+
+  }
+
+}
+
+
+/* =====================================================
+   LINKS DAS IMAGENS DOS ELENCOS
+===================================================== */
+
+const rosterLinks = {
+
+  "atlanta-hawks":
+  "https://drive.google.com/thumbnail?id=10i6HehBIGlOBnpHa8ZB26tOLyl50P2fr&sz=w1200",
+
+  "boston-celtics":
+  "https://drive.google.com/thumbnail?id=1IgYuYa7Xzd23_0qUH1rcWyPmJI-Whtsp&sz=w1200",
+
+  "brooklyn-nets":
+  "https://drive.google.com/thumbnail?id=1Ib096r0DYNRosrD5gPNnH5eUVCkPEhVl&sz=w1200",
+
+  "charlotte-hornets":
+  "https://drive.google.com/thumbnail?id=1h6poVXNvXqP04LREABWwDf1BqSgomaQa&sz=w1200",
+
+  "chicago-bulls":
+  "https://drive.google.com/thumbnail?id=1mXsWXv_E2RKOgB0S2GEfHeFoK37K6IY6&sz=w1200",
+
+  "cleveland-cavaliers":
+  "https://drive.google.com/thumbnail?id=1tBTcCLceGMRj1UUbsaBl9jcCbirNmwmo&sz=w1200",
+
+  "dallas-mavericks":
+  "https://drive.google.com/thumbnail?id=1Eqxg3L0UQRa9dap1a34LmbLizoIIUXH2&sz=w1200",
+
+  "denver-nuggets":
+  "https://drive.google.com/thumbnail?id=1scA5fJWFRA8_HTJRsLlRnNDl3Z1YU6TL&sz=w1200",
+
+  "detroit-pistons":
+  "https://drive.google.com/thumbnail?id=14QJkYA3vBLAzb7yAKXxfQ3vuxJOpOxD2&sz=w1200",
+
+  "golden-state-warriors":
+  "https://drive.google.com/thumbnail?id=1_-g3x5UUgdFDGM_b8U8P25BJHPndXP1c&sz=w1200",
+
+  "houston-rockets":
+  "https://drive.google.com/thumbnail?id=1Qe0EAFhoEhIMnLHFHaySXo4759lXhLrU&sz=w1200",
+
+  "indiana-pacers":
+  "https://drive.google.com/thumbnail?id=12rZWUciCyJoLnWMqaxvqo1mdTXpP4uUl&sz=w1200",
+
+  "los-angeles-clippers":
+  "https://drive.google.com/thumbnail?id=1kzyBQ-QLOUMQzXbjopX2Hp4cCSXC7cDm&sz=w1200",
+
+  "los-angeles-lakers":
+  "https://drive.google.com/thumbnail?id=1Qq91IGj2wgXN2-ur-AqmeCDbrt2spLJg&sz=w1200",
+
+  "memphis-grizzlies":
+  "https://drive.google.com/thumbnail?id=14EFO7UDA9ZN2vE8guZ5kP6KEpPt3joMt&sz=w1200",
+
+  "miami-heat":
+  "https://drive.google.com/thumbnail?id=1bQcLkAaxP7mxuWhus6x-wmJzwYOJNfIj&sz=w1200",
+
+  "milwaukee-bucks":
+  "https://drive.google.com/thumbnail?id=1uFs9ez-5810zsYNv5Ij1tzDrJwEW-oib&sz=w1200",
+
+  "minnesota-timberwolves":
+  "https://drive.google.com/thumbnail?id=1RGz0w0iIWTJ8i2PekY1uoWFh1Ec_2MVY&sz=w1200",
+
+  "new-orleans-pelicans":
+  "https://drive.google.com/thumbnail?id=16ZYVxEnNwgoOMMWCPGJoimD1hQEGgg4x&sz=w1200",
+
+  "new-york-knicks":
+  "https://drive.google.com/thumbnail?id=1kIJOtN5uee627xilUi3TEEA-HGuA9WtP&sz=w1200",
+
+  "oklahoma-city-thunder":
+  "https://drive.google.com/thumbnail?id=1lr8HZ7BlwvdERdpkByhbCAJ1kpNAVL5y&sz=w1200",
+
+  "orlando-magic":
+  "https://drive.google.com/thumbnail?id=14rN-vkLGjp_6pyhxlpPxRNxuXTTOommZ&sz=w1200",
+
+  "philadelphia-76ers":
+  "https://drive.google.com/thumbnail?id=1LTqWC0JuLaWtQAFyRvIga2D-ijeHBsgS&sz=w1200",
+
+  "phoenix-suns":
+  "https://drive.google.com/thumbnail?id=1kNWpI7jJHKS_YZGe2U3DPrvLWaQZzicy&sz=w1200",
+
+  "portland-trail-blazers":
+  "https://drive.google.com/thumbnail?id=1CCo71tabEYuVRpzE0VeI1srqWm5K36_e&sz=w1200",
+
+  "sacramento-kings":
+  "https://drive.google.com/thumbnail?id=1dhrtgIyyuhFo96q3tyy1PSEucb2Nr0vh&sz=w1200",
+
+  "san-antonio-spurs":
+  "https://drive.google.com/thumbnail?id=1lQZ_4i200c9_DVZYOzioe8CC9pZ_7rfT&sz=w1200",
+
+  "toronto-raptors":
+  "https://drive.google.com/thumbnail?id=1I9J4CwUMC9fVrp01L7srsFamXLQZ0j3E&sz=w1200",
+
+  "utah-jazz":
+  "https://drive.google.com/thumbnail?id=1eRuc6Fnb7co8-FeansCxzbhCQLpP6dsr&sz=w1200",
+
+  "washington-wizards":
+  "https://drive.google.com/thumbnail?id=14ulc-a4BrZ-zbtfFXhbgBQmcBvzdliKz&sz=w1200"
+
+};
+
+
+/* =====================================================
+   CRIAÇÃO DAS LISTAS
+===================================================== */
+
 try{
 
   if(typeof teams !== "undefined"){
 
-    const container=document.getElementById("teams");
+    const playerContainer =
+      document.getElementById("teams");
 
-    /* LOGOS ESPECIAIS */
-    const customLogos={
+    const rosterContainer =
+      document.getElementById("rosterTeams");
+
+
+    /* =================================================
+       LOGOS ESPECIAIS
+    ================================================= */
+
+    const customLogos = {
 
       "denver-nuggets":
       "https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg",
@@ -324,34 +792,60 @@ try{
 
     };
 
-    teams.sort((a,b)=>a.name.localeCompare(b.name));
+
+    /* =================================================
+       ORDEM ALFABÉTICA
+    ================================================= */
+
+    teams.sort(
+      (a,b)=>
+        a.name.localeCompare(b.name)
+    );
+
+
+    /* =================================================
+       LISTA JOGADORES
+    ================================================= */
 
     teams.forEach(team=>{
 
-      const div=document.createElement("div");
+      const div =
+        document.createElement("div");
 
       div.className="card";
 
-      const logo=
+
+      const logo =
         customLogos[team.slug]
-        || `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+        ||
+        `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+
 
       div.innerHTML=`
 
         <img
           src="${logo}"
-          onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'"
+          onerror="
+            this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'
+          "
         >
 
         <div>
-          <span>${team.name}</span>
+
+          <span>
+            ${team.name}
+          </span>
+
         </div>
 
       `;
 
+
       div.onclick=()=>{
 
-        navigator.clipboard.writeText(team.text);
+        navigator.clipboard.writeText(
+          team.text
+        );
 
         window.open(
           `https://www.google.com/search?q=${encodeURIComponent(team.text)}`,
@@ -360,7 +854,88 @@ try{
 
       };
 
-      container.appendChild(div);
+
+      playerContainer.appendChild(div);
+
+    });
+
+
+    /* =================================================
+       LISTA ELENCOS
+    ================================================= */
+
+    teams.forEach(team=>{
+
+      const div =
+        document.createElement("div");
+
+      div.className="card";
+
+
+      const logo =
+        customLogos[team.slug]
+        ||
+        `https://loodibee.com/wp-content/uploads/nba-${team.slug}-logo.png`;
+
+
+      div.innerHTML=`
+
+        <img
+          src="${logo}"
+          onerror="
+            this.src='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'
+          "
+        >
+
+        <div>
+
+          <span>
+            ${team.name}
+          </span>
+
+        </div>
+
+      `;
+
+
+      /* ===============================================
+         CLICAR NO TIME = ABRIR ELENCO
+      =============================================== */
+
+      div.onclick=()=>{
+
+        const imagem =
+          rosterLinks[team.slug];
+
+        if(!imagem){
+
+          alert(
+            "Imagem do elenco ainda não cadastrada para este time."
+          );
+
+          return;
+
+        }
+
+
+        document
+          .getElementById("rosterImage")
+          .src=imagem;
+
+
+        document
+          .getElementById("rosterTitle")
+          .innerText=team.name;
+
+
+        document
+          .getElementById("rosterModal")
+          .classList.add("active");
+
+      };
+
+
+      rosterContainer.appendChild(div);
 
     });
 
@@ -368,16 +943,83 @@ try{
 
 }catch(e){
 
-  console.warn("Erro ignorado:", e);
+  console.warn(
+    "Erro ignorado:",
+    e
+  );
 
 }
+
+
+/* =====================================================
+   FECHAR MODAL
+===================================================== */
+
+function fecharModal(){
+
+  document
+    .getElementById("rosterModal")
+    .classList.remove("active");
+
+  document
+    .getElementById("rosterImage")
+    .src="";
+
+}
+
+
+/* =====================================================
+   FECHAR CLICANDO FORA DA IMAGEM
+===================================================== */
+
+function fecharElenco(event){
+
+  if(
+    event.target.id ===
+    "rosterModal"
+  ){
+
+    fecharModal();
+
+  }
+
+}
+
+
+/* =====================================================
+   ESC PARA FECHAR
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+
+      fecharModal();
+
+    }
+
+  }
+);
+
 </script>
 
-<!-- SERVICE WORKER -->
+
+<!-- =====================================================
+     SERVICE WORKER
+===================================================== -->
+
 <script>
+
 if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("service-worker.js");
+
+  navigator.serviceWorker.register(
+    "service-worker.js"
+  );
+
 }
+
 </script>
 
 </body>
