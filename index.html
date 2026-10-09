@@ -743,12 +743,13 @@ function criarCartao(team, modo) {
       const rosterImage =
         document.getElementById("rosterImage");
 
-      rosterImage.onerror = function() {
-        this.onerror = null;
-        alert(
-          "Não foi possível carregar a imagem deste elenco. Verifique se o arquivo está compartilhado para visualização por qualquer pessoa com o link."
-        );
-      };
+rosterImage.onerror = function() {
+  this.onerror = null;
+  console.warn(
+    "Não foi possível carregar a imagem do elenco:",
+    team.name
+  );
+};
 
       rosterImage.src = imagem;
 
